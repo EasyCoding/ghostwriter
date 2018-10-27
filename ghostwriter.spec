@@ -9,7 +9,6 @@ Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5XmlPatterns)
-#BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5WebKit)
