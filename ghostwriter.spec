@@ -24,6 +24,8 @@ BuildRequires: libappstream-glib
 BuildRequires: hunspell-devel
 BuildRequires: gcc-c++
 
+Requires: hicolor-icon-theme
+
 %description
 Ghostwriter is a text editor for Markdown, which is a plain text markup
 format created by John Gruber. For more information about Markdown, please
