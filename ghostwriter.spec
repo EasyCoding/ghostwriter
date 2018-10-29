@@ -2,7 +2,7 @@ Name: ghostwriter
 Version: 1.7.3
 Release: 1%{?dist}
 
-License: GPLv3+
+License: GPLv3+ and CC-BY and CC-BY-SA and MPL and BSD and LGPLv3 and Expat and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
 URL: https://github.com/wereturtle/%{name}
 Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -57,6 +57,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
+%dir %{_datadir}/ghostwriter
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
 %{_datadir}/pixmaps/%{name}.xpm
