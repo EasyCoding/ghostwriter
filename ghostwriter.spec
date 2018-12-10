@@ -1,5 +1,5 @@
 Name: ghostwriter
-Version: 1.7.3
+Version: 1.7.4
 Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
@@ -66,5 +66,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Mon Dec 10 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7.4-1
+- Updated to version 1.7.4.
+
 * Sat Oct 27 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.7.3-1
 - Initial SPEC release.
