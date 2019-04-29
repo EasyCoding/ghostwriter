@@ -1,6 +1,6 @@
 Name: ghostwriter
-Version: 1.7.4
-Release: 2%{?dist}
+Version: 1.8.0
+Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
@@ -9,9 +9,9 @@ Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5XmlPatterns)
+BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: cmake(Qt5Network)
-BuildRequires: cmake(Qt5WebKit)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Help)
@@ -66,6 +66,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Mon Apr 29 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 1.8.0-1
+- Updated to version 1.8.0.
+
 * Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.7.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
