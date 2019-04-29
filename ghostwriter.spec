@@ -26,6 +26,9 @@ BuildRequires: gcc-c++
 
 Requires: hicolor-icon-theme
 
+# Required qt5-qtwebengine is not available on some arches.
+ExcludeArch: ppc64le s390x
+
 %description
 Ghostwriter is a text editor for Markdown, which is a plain text markup
 format created by John Gruber. For more information about Markdown, please
