@@ -27,7 +27,7 @@ BuildRequires: gcc-c++
 Requires: hicolor-icon-theme
 
 # Required qt5-qtwebengine is not available on some arches.
-ExcludeArch: ppc64le s390x
+ExclusiveArch: %{qt5_qtwebengine_arches}
 
 %description
 Ghostwriter is a text editor for Markdown, which is a plain text markup
