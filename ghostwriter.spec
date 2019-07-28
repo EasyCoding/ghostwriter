@@ -1,6 +1,6 @@
 Name: ghostwriter
 Version: 1.8.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
@@ -69,6 +69,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Mon Apr 29 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 1.8.0-1
 - Updated to version 1.8.0.
 
