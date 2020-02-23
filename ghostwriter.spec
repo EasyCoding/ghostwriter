@@ -1,11 +1,11 @@
 Name: ghostwriter
-Version: 1.8.0
-Release: 3%{?dist}
+Version: 1.8.1
+Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
 URL: https://github.com/wereturtle/%{name}
-Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5XmlPatterns)
@@ -66,9 +66,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
 %{_datadir}/pixmaps/%{name}.xpm
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sun Feb 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.8.1-1
+- Updated to version 1.8.1.
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
