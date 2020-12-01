@@ -23,6 +23,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: hunspell-devel
 BuildRequires: gcc-c++
+BuildRequires: make
 
 Requires: hicolor-icon-theme
 
