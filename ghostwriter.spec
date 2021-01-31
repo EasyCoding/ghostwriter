@@ -1,11 +1,13 @@
+%global relsuffix rc4
+
 Name: ghostwriter
-Version: 1.8.1
-Release: 3%{?dist}
+Version: 2.0.0
+Release: 0.1.%{relsuffix}%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
 URL: https://github.com/wereturtle/%{name}
-Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0: %{url}/archive/%{version}-%{relsuffix}/%{name}-%{version}-%{relsuffix}.tar.gz
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5XmlPatterns)
@@ -40,22 +42,21 @@ whether your masterpiece be that next blog post, your school paper,
 or your novel.
 
 %prep
-%autosetup
-mkdir -p %{_target_platform}
-sed -i 's@appdata/@metainfo/@g' %{name}.pro
+%autosetup -n %{name}-%{version}-%{relsuffix} -p1
+mkdir -p %{_vpath_builddir}
 
 %build
-pushd %{_target_platform}
+pushd %{_vpath_builddir}
     %qmake_qt5 PREFIX=%{_prefix} ..
 popd
-%make_build -C %{_target_platform}
+%make_build -C %{_vpath_builddir}
 
 %check
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdata.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %install
-%make_install INSTALL_ROOT=%{buildroot} -C %{_target_platform}
+%make_install INSTALL_ROOT=%{buildroot} -C %{_vpath_builddir}
 %find_lang %{name} --with-qt
 
 %files -f %{name}.lang
@@ -66,10 +67,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %dir %{_datadir}/ghostwriter
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
-%{_datadir}/pixmaps/%{name}.xpm
 %{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sun Jan 31 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-0.1.rc4
+- Updated to version 2.0.0 (RC4).
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
