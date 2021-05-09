@@ -25,6 +25,12 @@ BuildRequires: hunspell-devel
 BuildRequires: gcc-c++
 BuildRequires: make
 
+Provides: bundled(QtAwesome) = 5
+Provides: bundled(fontawesome-fonts) = 5.10.2
+Provides: bundled(nodejs-mathjax-full) = 3.1.2
+Provides: bundled(nodejs-react) = 17.0.1
+Provides: bundled(cmark-gfm) = 0.29.0
+
 Requires: hicolor-icon-theme
 
 # Required qt5-qtwebengine is not available on some arches.
@@ -42,6 +48,7 @@ or your novel.
 %prep
 %autosetup -n %{name}-%{version} -p1
 mkdir -p %{_vpath_builddir}
+rm -rf 3rdparty/hunspell
 
 %build
 pushd %{_vpath_builddir}
