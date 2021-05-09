@@ -1,13 +1,11 @@
-%global relsuffix rc4
-
 Name: ghostwriter
 Version: 2.0.0
-Release: 0.1.%{relsuffix}%{?dist}
+Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
 URL: https://github.com/wereturtle/%{name}
-Source0: %{url}/archive/%{version}-%{relsuffix}/%{name}-%{version}-%{relsuffix}.tar.gz
+Source0: %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5XmlPatterns)
@@ -42,7 +40,7 @@ whether your masterpiece be that next blog post, your school paper,
 or your novel.
 
 %prep
-%autosetup -n %{name}-%{version}-%{relsuffix} -p1
+%autosetup -n %{name}-%{version} -p1
 mkdir -p %{_vpath_builddir}
 
 %build
@@ -70,6 +68,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sun May 09 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-1
+- Updated to version 2.0.0.
+
 * Sun Jan 31 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-0.1.rc4
 - Updated to version 2.0.0 (RC4).
 
