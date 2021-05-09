@@ -7,29 +7,31 @@ Summary: Cross-platform, aesthetic, distraction-free Markdown editor
 URL: https://github.com/wereturtle/%{name}
 Source0: %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(Qt5XmlPatterns)
-BuildRequires: cmake(Qt5WebEngine)
-BuildRequires: cmake(Qt5X11Extras)
-BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5Help)
 BuildRequires: cmake(Qt5Gui)
+BuildRequires: cmake(Qt5Help)
+BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Svg)
+BuildRequires: cmake(Qt5WebEngine)
+BuildRequires: cmake(Qt5WebEngineWidgets)
+BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: cmake(Qt5Xml)
+BuildRequires: cmake(Qt5XmlPatterns)
 
 BuildRequires: desktop-file-utils
-BuildRequires: libappstream-glib
-BuildRequires: hunspell-devel
 BuildRequires: gcc-c++
+BuildRequires: hunspell-devel
+BuildRequires: libappstream-glib
 BuildRequires: make
 
 Provides: bundled(QtAwesome) = 5
+Provides: bundled(cmark-gfm) = 0.29.0
 Provides: bundled(fontawesome-fonts) = 5.10.2
 Provides: bundled(nodejs-mathjax-full) = 3.1.2
 Provides: bundled(nodejs-react) = 17.0.1
-Provides: bundled(cmark-gfm) = 0.29.0
 
 Requires: hicolor-icon-theme
 
