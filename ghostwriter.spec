@@ -1,6 +1,6 @@
 Name: ghostwriter
 Version: 2.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
@@ -27,13 +27,17 @@ BuildRequires: hunspell-devel
 BuildRequires: libappstream-glib
 BuildRequires: make
 
-Provides: bundled(QtAwesome) = 5
 Provides: bundled(cmark-gfm) = 0.29.0
 Provides: bundled(fontawesome-fonts) = 5.10.2
 Provides: bundled(nodejs-mathjax-full) = 3.1.2
 Provides: bundled(nodejs-react) = 17.0.1
+Provides: bundled(QtAwesome) = 5
 
 Requires: hicolor-icon-theme
+
+Recommends: cmark%{?_isa}
+Recommends: multimarkdown%{?_isa}
+Recommends: pandoc%{?_isa}
 
 # Required qt5-qtwebengine is not available on some arches.
 ExclusiveArch: %{qt5_qtwebengine_arches}
@@ -77,6 +81,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sun May 09 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-2
+- Added supported Markdown exporters as weak dependencies.
+
 * Sun May 09 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-1
 - Updated to version 2.0.0.
 
