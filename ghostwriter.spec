@@ -1,6 +1,6 @@
 Name: ghostwriter
-Version: 2.0.0
-Release: 2%{?dist}
+Version: 2.0.1
+Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
 Summary: Cross-platform, aesthetic, distraction-free Markdown editor
@@ -81,6 +81,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Tue May 18 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.1-1
+- Updated to version 2.0.1.
+
 * Sun May 09 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.0-2
 - Added supported Markdown exporters as weak dependencies.
 
