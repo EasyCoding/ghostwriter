@@ -1,5 +1,5 @@
 Name: ghostwriter
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 
 License: GPLv3+ and CC-BY and CC-BY-SA and MPLv1.1 and BSD and LGPLv3 and MIT and ISC
@@ -81,6 +81,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sun Jun 27 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.2-1
+- Updated to version 2.0.2.
+
 * Tue May 18 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 2.0.1-1
 - Updated to version 2.0.1.
 
